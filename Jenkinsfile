@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.8.1' // Make sure this matches the Maven version installed in Jenkins
+        maven 'Maven_3.9.11' // Make sure this matches the Maven version installed in Jenkins
     }
 
     environment {
@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-repo-name.git' // Replace with your actual repo URL
+                git 'https://github.com/medamsusmitha96/jenkins-ci-assignment.git' // Replace with your actual repo URL
             }
         }
 
