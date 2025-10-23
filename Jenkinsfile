@@ -2,20 +2,10 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven_3.9.11' // Make sure this matches the Maven version installed in Jenkins
+        maven 'Maven_3.9.11'
     }
 
-    // environment {
-    //     // You can define environment variables here if needed
-    // }
-
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/medamsusmitha96/jenkins-ci-assignment.git' // Replace with your actual repo URL
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean install'
