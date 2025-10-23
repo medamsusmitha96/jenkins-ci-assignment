@@ -5,9 +5,9 @@ pipeline {
         maven 'Maven_3.9.11' // Make sure this matches the Maven version installed in Jenkins
     }
 
-    environment {
-        // You can define environment variables here if needed
-    }
+    // environment {
+    //     // You can define environment variables here if needed
+    // }
 
     stages {
         stage('Checkout') {
