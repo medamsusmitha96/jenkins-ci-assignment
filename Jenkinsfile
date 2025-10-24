@@ -30,12 +30,17 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            echo 'Build completed successfully!'
-        }
-        failure {
-            echo 'Build failed. Check the logs for details.'
+   post {
+    always {
+        script {
+            def reports = findFiles(glob: 'target/surefire-reports/*.xml')
+            if (reports.length > 0) {
+                junit 'target/surefire-reports/*.xml'
+            } else {
+                echo 'No test reports found to archive.'
+            }
         }
     }
+}
+
 }
